@@ -1,0 +1,37 @@
+.privara-navbar {
+  background: #0F2F24;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.nav-logo {
+  height: 36px;
+}
+
+.brand-text {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #C6D6C8;
+}
+
+.nav-link-custom {
+  color: #C6D6C8 !important;
+  font-weight: 500;
+}
+
+.nav-link-custom:hover {
+  color: white !important;
+}
+
+.btn-contacto {
+  border: 1px solid #C6D6C8;
+  background: transparent;
+  color: #C6D6C8;
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+
+.btn-contacto:hover {
+  background: #C6D6C8;
+  color: #0F2F24;
+}

@@ -1,0 +1,35 @@
+.contact-wrapper {
+  background: #0F2F24;
+  color: #E7EDE8;
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.contact-title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.contact-sub {
+  max-width: 500px;
+  margin: 12px auto 30px;
+  color: #C2CEC8;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: auto;
+}
+
+.btn-contact-submit {
+  background: #D9E3DB;
+  color: #0F2F24;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.btn-contact-submit:hover {
+  background: white;
+}

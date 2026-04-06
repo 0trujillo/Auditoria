@@ -1,0 +1,35 @@
+.serv-wrapper {
+  background: #0F2F24;
+  color: #E7EDE8;
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.serv-title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.serv-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 15px;
+  backdrop-filter: blur(4px);
+  padding: 5px;
+  transition: 0.3s;
+}
+
+.serv-card:hover {
+  background: #D9E3DB;
+  color: #0F2F24;
+  transform: translateY(-5px);
+}
+
+.serv-card ul {
+  margin-top: 15px;
+  padding-left: 18px;
+}
+
+.serv-card li {
+  margin-bottom: 6px;
+}

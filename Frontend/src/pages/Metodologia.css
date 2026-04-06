@@ -1,0 +1,27 @@
+.met-wrapper {
+  background: #0F2F24;
+  color: #E7EDE8;
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.met-title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.met-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  backdrop-filter: blur(4px);
+  transition: 0.3s;
+}
+
+.met-box:hover {
+  background: #D9E3DB;
+  color: #0F2F24;
+  transform: translateY(-5px);
+}
