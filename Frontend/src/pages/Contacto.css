@@ -33,3 +33,14 @@
 .btn-contact-submit:hover {
   background: white;
 }
+.contact-form-glass {
+  background: rgba(255, 255, 255, 0.197); /* Como en la imagen 1 */
+  padding: 40px;
+  border-radius: 20px;
+  color: #333; /* Texto oscuro para el formulario blanco */
+}
+
+.contact-form-glass input, .contact-form-glass textarea {
+  border: 1px solid #eee;
+  padding: 12px;
+}

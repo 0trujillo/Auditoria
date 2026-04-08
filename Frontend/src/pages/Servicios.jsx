@@ -1,51 +1,51 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { serviciosData } from "../data/serviciosData";
 import "./Servicios.css";
 
 export default function Servicios() {
+  const navigate = useNavigate();
+
   return (
     <div className="serv-wrapper">
       <Container className="py-5">
-        <h1 className="serv-title text-center mb-5">Servicios</h1>
+        <h2 className="serv-main-title text-center mb-5">
+          Nuestros Servicios
+        </h2>
 
-        <Row className="g-4">
-          <Col md={4}>
-            <Card className="serv-card">
-              <Card.Body>
-                <Card.Title>Protección de datos</Card.Title>
-                <ul>
-                  <li>Diagnóstico</li>
-                  <li>Ley 21.719</li>
-                  <li>Data Protection Officer (DPO)</li>
-                </ul>
-              </Card.Body>
-            </Card>
-          </Col>
+        <Row className="g-4 justify-content-center">
+          {serviciosData.map((serv) => (
+            <Col md={6} lg={4} key={serv.id}>
+              <Card
+                className="serv-card-pro"
+                onClick={() => navigate(`/servicios/${serv.id}`)}
+              >
+                <div className="serv-img-container">
+                  <Card.Img variant="top" src={serv.imagen} />
+                </div>
 
-          <Col md={4}>
-            <Card className="serv-card">
-              <Card.Body>
-                <Card.Title>Ciberseguridad</Card.Title>
-                <ul>
-                  <li>Ley Marco</li>
-                  <li>Gestión de riesgos</li>
-                  <li>CISO as a Service</li>
-                </ul>
-              </Card.Body>
-            </Card>
-          </Col>
+                <Card.Body>
+                  <Card.Title className="serv-card-title">
+                    {serv.titulo}
+                  </Card.Title>
 
-          <Col md={4}>
-            <Card className="serv-card">
-              <Card.Body>
-                <Card.Title>Compliance</Card.Title>
-                <ul>
-                  <li>Gobernanza</li>
-                  <li>Mapas de riesgo</li>
-                  <li>Responsabilidad corporativa</li>
-                </ul>
-              </Card.Body>
-            </Card>
-          </Col>
+                  <Card.Subtitle className="serv-card-sub mb-2">
+                    {serv.subtitulo}
+                  </Card.Subtitle>
+
+                  <Card.Text className="serv-card-text">
+                    {serv.descripcion}
+                  </Card.Text>
+
+                  <ul className="serv-list">
+                    {serv.detalles.slice(0, 3).map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
         </Row>
       </Container>
     </div>
