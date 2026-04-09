@@ -22,7 +22,7 @@ export default function ServicioDetalle() {
 
   return (
     <div className="detalle-wrapper">
-      {/* Banner */}
+      {/* 🔥 Banner */}
       <section className="detalle-banner">
         <Container>
           <Button
@@ -38,17 +38,19 @@ export default function ServicioDetalle() {
         </Container>
       </section>
 
-      {/* Contenido */}
+      {/* 🔥 Contenido */}
       <Container className="py-5">
         <Row className="justify-content-center">
           <Col lg={8}>
             <div className="detalle-content-card">
               <h3>Descripción del Servicio</h3>
+
               <p className="descripcion-text">
                 {servicio.descripcion}
               </p>
 
               <h4 className="mt-5">¿Qué incluye?</h4>
+
               <ul className="detalle-list">
                 {servicio.detalles.map((item, index) => (
                   <li key={index}>{item}</li>
@@ -57,6 +59,7 @@ export default function ServicioDetalle() {
 
               <div className="detalle-cta mt-5 p-4 text-center">
                 <h5>¿Necesitas este servicio?</h5>
+
                 <Button
                   className="btn-privara-primary"
                   onClick={() => navigate("/contacto")}

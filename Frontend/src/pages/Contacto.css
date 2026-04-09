@@ -1,46 +1,239 @@
-.contact-wrapper {
-  background: #0F2F24;
-  color: #E7EDE8;
-  padding-top: 60px;
-  padding-bottom: 80px;
+.contact-header{
+  text-align:center;
+  margin-bottom:60px;
 }
 
-.contact-title {
-  font-size: 2rem;
+.contact-header h2{
+  color:white;
+  font-size:2.2rem;
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+.contact-header p{
+  color:#c7e5dc;
+  font-size:1rem;
+  max-width:600px;
+  margin:auto;
+}/* CONTENEDOR GENERAL */
+.contact-wrapper{
+  padding: 90px 0;
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    #062c24 0%,
+    #0f3f33 45%,
+    #1b5e4a 100%
+  );
+}
+
+/* LUZ DIFUSA DECORATIVA */
+.contact-wrapper::before{
+  content:"";
+  position:absolute;
+  width:500px;
+  height:500px;
+  background: radial-gradient(circle,#2e7d63 0%,transparent 70%);
+  top:-200px;
+  left:-200px;
+  opacity:0.25;
+}
+
+.contact-wrapper::after{
+  content:"";
+  position:absolute;
+  width:400px;
+  height:400px;
+  background: radial-gradient(circle,#3aa384 0%,transparent 70%);
+  bottom:-200px;
+  right:-150px;
+  opacity:0.18;
+}
+
+
+/* GRID PRINCIPAL */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  align-items: start;
+}
+
+
+/* TARJETAS */
+.contact-card {
+  background: rgba(255,255,255,0.95);
+  padding: 32px;
+  border-radius: 22px;
+
+  backdrop-filter: blur(8px);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.25),
+    0 5px 20px rgba(0,0,0,0.15);
+
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover{
+  transform: translateY(-4px);
+}
+
+
+/* TITULOS */
+.contact-section-title {
   font-weight: 600;
+  margin-bottom: 28px;
+  font-size: 1.3rem;
+  color: #0f3f33;
 }
 
-.contact-sub {
-  max-width: 500px;
-  margin: 12px auto 30px;
-  color: #C2CEC8;
+
+/* ITEMS DE CONTACTO */
+.contact-item{
+  margin-bottom:20px;
 }
 
-.contact-form {
-  max-width: 500px;
-  margin: auto;
+.contact-item span{
+  font-size:12px;
+  letter-spacing:1px;
+  color:#6b8f86;
 }
 
-.btn-contact-submit {
-  background: #D9E3DB;
-  color: #0F2F24;
-  font-weight: bold;
-  padding: 10px;
-  border-radius: 10px;
-  border: none;
+.contact-item p{
+  font-size:15px;
+  font-weight:500;
+  margin-top:4px;
+  color:#0f3f33;
 }
 
-.btn-contact-submit:hover {
+
+/* GRID FORMULARIO */
+.contact-form-pro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+
+/* TEXTAREA DERECHA */
+.textarea-col {
+  grid-row: span 2;
+  min-height: 180px;
+  resize: none;
+}
+
+
+/* INPUTS */
+.contact-form-pro input,
+.contact-form-pro textarea {
+
+  border-radius: 12px;
+  padding: 14px 16px;
+
+  border: 1px solid #d7e3de;
+
+  font-size: 0.95rem;
+
+  background: #f2f7f5;
+
+  transition: all 0.25s ease;
+}
+
+
+/* FOCUS INPUTS */
+.contact-form-pro input:focus,
+.contact-form-pro textarea:focus {
+
+  border-color: #2e7d63;
+
+  outline: none;
+
+  box-shadow: 0 0 0 3px rgba(46,125,99,0.18);
+
   background: white;
 }
-.contact-form-glass {
-  background: rgba(255, 255, 255, 0.197); /* Como en la imagen 1 */
-  padding: 40px;
-  border-radius: 20px;
-  color: #333; /* Texto oscuro para el formulario blanco */
+
+
+/* BOTON WRAPPER */
+.contact-btn-wrap {
+  grid-column: span 2;
+  margin-top: 8px;
 }
 
-.contact-form-glass input, .contact-form-glass textarea {
-  border: 1px solid #eee;
-  padding: 12px;
+
+/* BOTON */
+.btn-contact-pro {
+
+  background: linear-gradient(
+    135deg,
+    #2e7d63,
+    #0f3f33
+  );
+
+  border: none;
+
+  padding: 14px 34px;
+
+  border-radius: 14px;
+
+  font-weight: 600;
+
+  color: white;
+
+  transition: all 0.3s ease;
+}
+
+
+/* HOVER BOTON */
+.btn-contact-pro:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+
+  background: linear-gradient(
+    135deg,
+    #359b79,
+    #124e3e
+  );
+}
+
+
+/* LABELS */
+.contact-form-pro label{
+
+  font-size:12px;
+
+  letter-spacing:1px;
+
+  color:#4b6b61;
+
+  margin-bottom:5px;
+
+  display:block;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 992px){
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .contact-form-pro{
+    grid-template-columns:1fr;
+  }
+
+  .textarea-col{
+    grid-row:auto;
+  }
+
+  .contact-btn-wrap{
+    grid-column:span 1;
+  }
+
 }

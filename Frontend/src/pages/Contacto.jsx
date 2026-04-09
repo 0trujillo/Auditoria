@@ -1,54 +1,122 @@
-import { Container, Form, Button, Row, Col } from "react-bootstrap";
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import { Container, Form, Button } from "react-bootstrap";
 import "./Contacto.css";
 
 export default function Contacto() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    // Reemplaza estos valores con tus credenciales de EmailJS
+    const SERVICE_ID = "service_s0jb918";
+    const TEMPLATE_ID = "template_1xgn5yn";
+    const PUBLIC_KEY = "ly9TTYPvA92zkDVKu";
+
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+      .then((result) => {
+          alert("¡Mensaje enviado con éxito!");
+          form.current.reset();
+      }, (error) => {
+          alert("Hubo un error al enviar el mensaje, por favor intenta de nuevo.");
+      });
+  };
+
   return (
     <div className="contact-wrapper">
       <Container className="py-5">
-        <h1 className="contact-title text-center">Contacto</h1>
 
-        <p className="contact-sub text-center">
-          Envíanos tu consulta y un consultor se pondrá en contacto contigo.
-        </p>
+        {/* TITULO DE LA SECCIÓN */}
+        <div className="contact-header">
+          <h2>Comunícate con nosotros</h2>
+          <p>
+            Estamos aquí para ayudarte. Puedes escribirnos a través del formulario
+            o utilizar cualquiera de nuestros canales de contacto.
+          </p>
+        </div>
 
-        <Row className="justify-content-center mt-5">
-          {/* Columna izquierda */}
-          <Col lg={5} className="text-start">
-            <div className="contact-info-box p-4">
-              <h4 className="accent-text">Canales de Contacto</h4>
-              <p><strong>Email:</strong> contacto@privara.cl</p>
-              <p><strong>Dirección:</strong> Santiago, Chile</p>
+        <div className="contact-grid">
+          
+          {/* SECCIÓN IZQUIERDA: INFO */}
+          <div className="contact-left">
+            <div className="contact-card">
+              <h4 className="contact-section-title">Datos de contacto</h4>
+              <ContactItem label="EMAIL" value="Contacto@privara.cl" />
+              <ContactItem label="TELÉFONO" value="+56 9 8139 2664" />
+              <ContactItem label="DIRECCIÓN" value="Santiago, Chile" />
+              <ContactItem label="HORARIO" value="Lunes a Viernes 9:00 - 17:00" />
             </div>
-          </Col>
+          </div>
 
-          {/* Columna derecha */}
-          <Col lg={6}>
-            <Form className="contact-form-glass">
-              <Form.Control 
-                className="mb-3" 
-                placeholder="Nombre completo" 
-              />
+          {/* SECCIÓN DERECHA: FORMULARIO */}
+          <div className="contact-right">
+            <div className="contact-card">
+              <h4 className="contact-section-title">Formulario de contacto</h4>
 
-              <Form.Control 
-                className="mb-3" 
-                placeholder="Email" 
-                type="email" 
-              />
+              {/* Añadimos el ref y el onSubmit */}
+              <Form ref={form} onSubmit={sendEmail} className="contact-form-pro">
 
-              <Form.Control 
-                as="textarea" 
-                rows={4} 
-                className="mb-4" 
-                placeholder="Mensaje" 
-              />
+                <div>
+                  <label>NOMBRE</label>
+                  <Form.Control 
+                    name="user_name" 
+                    placeholder="Tu nombre completo" 
+                    required 
+                  />
+                </div>
 
-              <Button className="btn-contact-submit w-100">
-                Enviar mensaje
-              </Button>
-            </Form>
-          </Col>
-        </Row>
+                <div>
+                  <label>EMAIL</label>
+                  <Form.Control 
+                    name="user_email" 
+                    placeholder="tu@correo.com" 
+                    type="email" 
+                    required 
+                  />
+                </div>
+
+                <div>
+                  <label>TELÉFONO</label>
+                  <Form.Control 
+                    name="user_phone" 
+                    placeholder="Ej: +56 9 6843 4272" 
+                  />
+                </div>
+
+                <div className="textarea-col">
+                  <label>MENSAJE</label>
+                  <Form.Control 
+                    as="textarea"
+                    name="message"
+                    placeholder="Cuéntanos tu caso y contexto (empresa, industria, urgencia, etc.)"
+                    required
+                    style={{ minHeight: '120px' }}
+                  />
+                </div>
+
+                <div className="contact-btn-wrap">
+                  <Button type="submit" className="btn-contact-pro">
+                    Enviar Mensaje →
+                  </Button>
+                </div>
+
+              </Form>
+
+            </div>
+          </div>
+
+        </div>
       </Container>
+    </div>
+  );
+}
+
+function ContactItem({ label, value }) {
+  return (
+    <div className="contact-item">
+      <span>{label}</span>
+      <p>{value}</p>
     </div>
   );
 }

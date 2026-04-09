@@ -1,44 +1,51 @@
+// IMPORTS correctos (con nombres reales)
+import dpd from "../assets/img/DPD.jpg";
+import ciberseguridad from "../assets/img/ciberseguridad.webp";
+import compliance from "../assets/img/compliance.jpg";
+
 export const serviciosData = [
   {
-    id: "prevencion-infracciones",
-    titulo: "Modelo de Prevención de Infracciones",
-    subtitulo: "Compliance de Datos Certificable",
+    id: "proteccion-datos-personales",
+    titulo: "PROTECCIÓN DE DATOS PERSONALES",
+    subtitulo: "Servicios de cumplimiento normativo",
     descripcion:
-      "Desarrollamos e implementamos el modelo de prevención exigido por la Ley 21.719.",
+      "Aseguramos que tu empresa cumpla con las regulaciones de protección de datos actuales.",
     detalles: [
-      "Diagnóstico de brechas normativas.",
-      "Redacción de reglamentos internos.",
-      "Capacitación a directivos.",
-      "Preparación para auditorías."
+      "Diagnóstico de cumplimiento.",
+      "Implementación de la Ley 21.719.",
+      "Elaboración de políticas y documentos.",
+      "Registro de actividades de tratamiento (RAT).",
+      "DPO as an service."
     ],
-    imagen: "prevencion_infraccion.png"
+    imagen: dpd // Usando DPD.jpg para protección de datos
   },
   {
-    id: "monitoreo-continuo",
-    titulo: "Monitoreo Continuo y Respuesta",
-    subtitulo: "Data Compliance activo",
+    id: "ciberseguridad-gestion-riesgos",
+    titulo: "CIBERSEGURIDAD Y GESTIÓN DE RIESGOS",
+    subtitulo: "Seguridad de la información",
     descripcion:
-      "Te ayudamos a reaccionar rápidamente ante incidentes de seguridad.",
+      "Protegemos tus activos digitales y gestionamos los riesgos de seguridad.",
     detalles: [
-      "Protocolos de respuesta.",
-      "Notificación a la Autoridad.",
-      "Análisis forense.",
-      "Mitigación de daños."
+      "Implementación de la Ley Marco de Ciberseguridad.",
+      "Identificación y evaluación de riesgos.",
+      "Diseño de controles y medidas.",
+      "CISO as an service."
     ],
-    imagen: "/img/serv-2.jpg"
+    imagen: ciberseguridad // Usando ciberseguridad.webp
   },
   {
-    id: "dpd-service",
-    titulo: "Delegado de Protección de Datos (DPD)",
-    subtitulo: "Abogados a tu servicio",
+    id: "compliance-gobernanza",
+    titulo: "COMPLIANCE Y GOBERNANZA",
+    subtitulo: "Gobernanza corporativa y control",
     descripcion:
-      "Asumimos el rol de DPO externo para asegurar cumplimiento continuo.",
+      "Implementamos estructuras de cumplimiento corporativo y legal.",
     detalles: [
-      "Punto de contacto oficial.",
-      "Supervisión normativa.",
-      "Atención derechos ARCO.",
-      "Informes periódicos."
+      "Diseño de modelos de gobernanza.",
+      "Programas de cumplimiento.",
+      "Mapas de riesgo.",
+      "Gobierno corporativo.",
+      "Responsabilidad penal de las empresas."
     ],
-    imagen: "/img/serv-3.jpg"
+    imagen: compliance // Usando compliance.jpg
   }
 ];

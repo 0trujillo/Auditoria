@@ -5,27 +5,81 @@ import "./Navbar.css";
 export default function NavbarComponent() {
   return (
     <Navbar expand="lg" className="privara-navbar" sticky="top">
+
       <Container>
-        <Navbar.Brand as={Link} to="/" className="d-flex align-items-center gap-2">
-          <img src="/logo-temp.svg" alt="Privara Logo" className="nav-logo" />
-          <span className="brand-text">Privara</span>
+
+        {/* LOGO */}
+        <Navbar.Brand 
+          as={Link} 
+          to="/" 
+          className="brand-wrapper d-flex align-items-center gap-2"
+        >
+          <img 
+            src="/logo-temp.svg" 
+            alt="Privara Logo" 
+            className="nav-logo"
+          />
+
+          <div className="brand-text-wrapper">
+            <span className="brand-main">PRIVARA</span>
+            <span className="brand-sub">Consultores</span>
+          </div>
+
         </Navbar.Brand>
 
-        <Navbar.Toggle />
+        {/* BOTON MOBILE */}
+        <Navbar.Toggle aria-controls="navbar-nav" />
 
-        <Navbar.Collapse className="justify-content-end">
-          <Nav className="align-items-center gap-4 nav-balanced">
-            <Nav.Link as={Link} to="/" className="nav-link-custom">Inicio</Nav.Link>
-            <Nav.Link as={Link} to="/servicios" className="nav-link-custom">Servicios</Nav.Link>
-            <Nav.Link as={Link} to="/metodologia" className="nav-link-custom">Metodología</Nav.Link>
-            <Nav.Link as={Link} to="/nosotros" className="nav-link-custom">Nosotros</Nav.Link>
+        <Navbar.Collapse id="navbar-nav" className="justify-content-end">
 
-            <Button as={Link} to="/contacto" className="btn-contacto">
+          <Nav className="nav-balanced">
+
+            <Nav.Link
+              as={Link}
+              to="/"
+              className="nav-link-custom"
+            >
+              Inicio
+            </Nav.Link>
+
+            <Nav.Link
+              as={Link}
+              to="/servicios"
+              className="nav-link-custom"
+            >
+              Servicios
+            </Nav.Link>
+
+            <Nav.Link
+              as={Link}
+              to="/metodologia"
+              className="nav-link-custom"
+            >
+              Metodología
+            </Nav.Link>
+
+            <Nav.Link
+              as={Link}
+              to="/nosotros"
+              className="nav-link-custom"
+            >
+              Nosotros
+            </Nav.Link>
+
+            <Button
+              as={Link}
+              to="/contacto"
+              className="btn-contacto"
+            >
               Contacto
             </Button>
+
           </Nav>
+
         </Navbar.Collapse>
+
       </Container>
+
     </Navbar>
   );
 }

@@ -1,37 +1,79 @@
-.privara-navbar {
-  background: #0F2F24;
-  padding-top: 10px;
-  padding-bottom: 10px;
+/* CONTENEDOR LOGO + TEXTO */
+.brand-wrapper{
+  display:flex;
+  align-items:center;
 }
 
+/* LOGO MAS GRANDE */
 .nav-logo {
-  height: 36px;
+  height: 45px;
 }
 
+/* CONTENEDOR TEXTO */
+.brand-text-wrapper{
+  display:flex;
+  align-items:baseline;
+  gap:6px;
+}
+
+/* PRIVARA */
+.brand-main{
+  font-size:1.8rem;
+  font-weight:700;
+  color:#C6D6C8;
+  letter-spacing:1px;
+}
+
+/* CONSULTORES */
+.brand-sub{
+  font-size:1rem;
+  color:#9fb8a9;
+  font-weight:500;
+}/* NAVBAR */
+.privara-navbar {
+  background: linear-gradient(90deg, #0F2F24, #134436);
+  padding: 12px 0;
+}
+
+
+/* TEXTO LOGO */
 .brand-text {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #C6D6C8;
 }
 
+/* LINKS */
 .nav-link-custom {
   color: #C6D6C8 !important;
   font-weight: 500;
+  font-size: 0.95rem;
+  transition: 0.25s;
 }
 
 .nav-link-custom:hover {
   color: white !important;
 }
 
+/* BOTON CONTACTO */
 .btn-contacto {
   border: 1px solid #C6D6C8;
   background: transparent;
   color: #C6D6C8;
-  padding: 6px 16px;
-  border-radius: 20px;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
 
 .btn-contacto:hover {
   background: #C6D6C8;
   color: #0F2F24;
+}
+
+/* DISTRIBUCION */
+.nav-balanced {
+  display: flex;
+  align-items: center;
+  gap: 28px;
 }

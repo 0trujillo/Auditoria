@@ -1,4 +1,4 @@
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { serviciosData } from "../data/serviciosData";
 import "./Servicios.css";
@@ -8,14 +8,15 @@ export default function Servicios() {
 
   return (
     <div className="serv-wrapper">
-      <Container className="py-5">
+      <Container fluid className="serv-container py-5">
         <h2 className="serv-main-title text-center mb-5">
           Nuestros Servicios
         </h2>
 
-        <Row className="g-4 justify-content-center">
+        {/* 🔥 CONTENEDOR FLEX PRO */}
+        <div className="serv-grid">
           {serviciosData.map((serv) => (
-            <Col md={6} lg={4} key={serv.id}>
+            <div key={serv.id} className="serv-col">
               <Card
                 className="serv-card-pro"
                 onClick={() => navigate(`/servicios/${serv.id}`)}
@@ -29,7 +30,7 @@ export default function Servicios() {
                     {serv.titulo}
                   </Card.Title>
 
-                  <Card.Subtitle className="serv-card-sub mb-2">
+                  <Card.Subtitle className="serv-card-sub">
                     {serv.subtitulo}
                   </Card.Subtitle>
 
@@ -44,9 +45,9 @@ export default function Servicios() {
                   </ul>
                 </Card.Body>
               </Card>
-            </Col>
+            </div>
           ))}
-        </Row>
+        </div>
       </Container>
     </div>
   );
