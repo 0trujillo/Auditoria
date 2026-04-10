@@ -1,43 +1,64 @@
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import "./Navbar.css";
 
 export default function NavbarComponent() {
-  return (
-    <Navbar expand="lg" className="privara-navbar" sticky="top">
 
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <Navbar
+      expand="lg"
+      className={`privara-navbar ${scrolled ? "scrolled" : ""}`}
+    >
       <Container>
 
         {/* LOGO */}
-        <Navbar.Brand 
-          as={Link} 
-          to="/" 
-          className="brand-wrapper d-flex align-items-center gap-2"
+        <Navbar.Brand
+          as={Link}
+          to="/"
+          className="d-flex align-items-center gap-2"
         >
-          <img 
-            src="/logo-temp.svg" 
-            alt="Privara Logo" 
+          <img
+            src="/logo-temp.svg"
+            alt="Privara Logo"
             className="nav-logo"
           />
 
-          <div className="brand-text-wrapper">
+          <div className="d-flex align-items-center">
             <span className="brand-main">PRIVARA</span>
             <span className="brand-sub">Consultores</span>
           </div>
 
         </Navbar.Brand>
 
+
         {/* BOTON MOBILE */}
         <Navbar.Toggle aria-controls="navbar-nav" />
 
-        <Navbar.Collapse id="navbar-nav" className="justify-content-end">
 
-          <Nav className="nav-balanced">
+        {/* MENU */}
+        <Navbar.Collapse id="navbar-nav">
+
+          <Nav className="ms-auto align-items-center">
 
             <Nav.Link
               as={Link}
               to="/"
-              className="nav-link-custom"
+              className={`nav-link-custom ${
+                location.pathname === "/" ? "nav-link-active" : ""
+              }`}
             >
               Inicio
             </Nav.Link>
@@ -45,7 +66,9 @@ export default function NavbarComponent() {
             <Nav.Link
               as={Link}
               to="/servicios"
-              className="nav-link-custom"
+              className={`nav-link-custom ${
+                location.pathname === "/servicios" ? "nav-link-active" : ""
+              }`}
             >
               Servicios
             </Nav.Link>
@@ -53,7 +76,9 @@ export default function NavbarComponent() {
             <Nav.Link
               as={Link}
               to="/metodologia"
-              className="nav-link-custom"
+              className={`nav-link-custom ${
+                location.pathname === "/metodologia" ? "nav-link-active" : ""
+              }`}
             >
               Metodología
             </Nav.Link>
@@ -61,7 +86,9 @@ export default function NavbarComponent() {
             <Nav.Link
               as={Link}
               to="/nosotros"
-              className="nav-link-custom"
+              className={`nav-link-custom ${
+                location.pathname === "/nosotros" ? "nav-link-active" : ""
+              }`}
             >
               Nosotros
             </Nav.Link>
@@ -79,7 +106,6 @@ export default function NavbarComponent() {
         </Navbar.Collapse>
 
       </Container>
-
     </Navbar>
   );
 }

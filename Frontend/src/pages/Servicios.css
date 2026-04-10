@@ -1,73 +1,107 @@
-/* 🔥 FONDO GENERAL */
+/* 🔥 FONDO GENERAL (modo dark + futurista) */
 .serv-wrapper {
-  background-color: #f8f9fa;
+  background: radial-gradient(circle at 20% 10%, #0f2a44, #05070d 70%);
   min-height: 100vh;
+  padding: 80px 20px;
 }
 
-/* 🔥 CONTENEDOR CENTRADO */
+/* 🔥 CONTENEDOR */
 .serv-container {
-  max-width: 1100px;
-  margin: 0 auto; 
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* 🔥 TÍTULO */
 .serv-main-title {
-  color: #2c3e50;
+  color: #ffffff;
   font-weight: 800;
-  font-size: 2.3rem;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+
+  /* efecto gradiente */
+  background: linear-gradient(90deg, #00e0ff, #7f5cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* 🔥 GRID FLEX CENTRADO (CLAVE) */
+/* 🔥 GRID */
 .serv-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* 👈 centra las filas */
-  align-items: stretch;
-  gap: 24px;
-  width: 100%; /* 👈 CLAVE */
+  justify-content: center;
+  gap: 28px;
 }
 
-/* 🔥 COLUMNAS (ANCHO FIJO) */
+/* 🔥 COLUMNAS */
 .serv-col {
   width: 320px;
-  flex: 0 0 350px;
-  display: flex; /* 👈 para que todas las cards midan igual */
+  flex: 0 0 320px;
+  display: flex;
 }
 
-/* 🔥 CARD */
+/* 🔥 CARD FUTURISTA */
 .serv-card-pro {
-  border: none !important;
-  border-radius: 18px !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: all 0.35s ease;
-  cursor: pointer;
+  border-radius: 20px !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08) !important;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease;
+
   min-height: 560px;
-  background: white !important;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
 }
 
+/* ✨ glow */
+.serv-card-pro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(0,224,255,0.15), transparent);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.serv-card-pro:hover::before {
+  opacity: 1;
+}
+
+/* HOVER */
 .serv-card-pro:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 80px rgba(0, 224, 255, 0.25);
 }
 
 /* 🔥 IMAGEN */
 .serv-img-container {
-  height: 260px;
+  height: 240px;
   overflow: hidden;
+  position: relative;
 }
 
 .serv-img-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  transition: transform 0.7s ease;
+  filter: brightness(0.8);
 }
 
 .serv-card-pro:hover img {
-  transform: scale(1.1);
+  transform: scale(1.12);
+}
+
+/* overlay imagen */
+.serv-img-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, #05070d);
 }
 
 /* 🔥 BODY */
@@ -75,27 +109,30 @@
   padding: 22px;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 
-/* 🔥 TÍTULO CARD */
+/* 🔥 TÍTULO */
 .serv-card-title {
   font-weight: 700;
-  color: #1a2a3a;
   font-size: 1.3rem;
-  margin-bottom: 5px;
+  color: #ffffff;
 }
 
 /* 🔥 SUBTÍTULO */
 .serv-card-sub {
-  color: #3498db !important;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
   margin-bottom: 10px;
+
+  background: linear-gradient(90deg, #00e0ff, #7f5cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* 🔥 TEXTO */
 .serv-card-text {
-  color: #666;
+  color: #aab4c5;
   font-size: 0.9rem;
   line-height: 1.6;
 
@@ -110,17 +147,26 @@
   margin-top: 12px;
   padding-left: 18px;
   font-size: 0.85rem;
-  color: #444;
+  color: #cfd6e6;
 }
 
 .serv-list li {
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
-/* 🔥 RESPONSIVE */
+/* 🔥 EFECTO BORDE NEON */
+.serv-card-pro:hover {
+  border: 1px solid rgba(0,224,255,0.4) !important;
+}
+
+/* 📱 RESPONSIVE */
 @media (max-width: 768px) {
   .serv-col {
     width: 100%;
     flex: 0 0 100%;
+  }
+
+  .serv-main-title {
+    font-size: 2rem;
   }
 }

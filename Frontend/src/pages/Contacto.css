@@ -1,116 +1,115 @@
-.contact-header{
-  text-align:center;
-  margin-bottom:60px;
+/* 🔥 HEADER */
+.contact-header {
+  text-align: center;
+  margin-bottom: 60px;
 }
 
-.contact-header h2{
-  color:white;
-  font-size:2.2rem;
-  font-weight:600;
-  margin-bottom:10px;
+.contact-header h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+
+  background: linear-gradient(90deg, #00e0ff, #7f5cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.contact-header p{
-  color:#c7e5dc;
-  font-size:1rem;
-  max-width:600px;
-  margin:auto;
-}/* CONTENEDOR GENERAL */
-.contact-wrapper{
-  padding: 90px 0;
+.contact-header p {
+  color: #aab4c5;
+  font-size: 1rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+
+/* 🔥 FONDO GENERAL FUTURISTA */
+.contact-wrapper {
+  padding: 100px 20px;
   position: relative;
   overflow: hidden;
 
-  background: linear-gradient(
-    135deg,
-    #062c24 0%,
-    #0f3f33 45%,
-    #1b5e4a 100%
-  );
+  background: radial-gradient(circle at 20% 10%, #0f2a44, #05070d 70%);
 }
 
-/* LUZ DIFUSA DECORATIVA */
-.contact-wrapper::before{
-  content:"";
-  position:absolute;
-  width:500px;
-  height:500px;
-  background: radial-gradient(circle,#2e7d63 0%,transparent 70%);
-  top:-200px;
-  left:-200px;
-  opacity:0.25;
+/* ✨ LUCES DECORATIVAS */
+.contact-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0,224,255,0.2), transparent 70%);
+  top: -200px;
+  left: -200px;
+  filter: blur(60px);
 }
 
-.contact-wrapper::after{
-  content:"";
-  position:absolute;
-  width:400px;
-  height:400px;
-  background: radial-gradient(circle,#3aa384 0%,transparent 70%);
-  bottom:-200px;
-  right:-150px;
-  opacity:0.18;
+.contact-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(127,92,255,0.2), transparent 70%);
+  bottom: -200px;
+  right: -150px;
+  filter: blur(60px);
 }
 
 
-/* GRID PRINCIPAL */
+/* 🔥 GRID */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1fr 1.4fr;
   gap: 40px;
-  align-items: start;
 }
 
 
-/* TARJETAS */
+/* 🔥 CARD GLASS */
 .contact-card {
-  background: rgba(255,255,255,0.95);
+  background: rgba(255, 255, 255, 0.03);
   padding: 32px;
   border-radius: 22px;
 
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
 
-  box-shadow:
-    0 20px 60px rgba(0,0,0,0.25),
-    0 5px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
 
-  transition: transform 0.3s ease;
+  transition: all 0.35s ease;
 }
 
-.contact-card:hover{
-  transform: translateY(-4px);
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 80px rgba(0, 224, 255, 0.2);
 }
 
 
-/* TITULOS */
+/* 🔥 TITULOS */
 .contact-section-title {
   font-weight: 600;
   margin-bottom: 28px;
-  font-size: 1.3rem;
-  color: #0f3f33;
+  font-size: 1.2rem;
+
+  background: linear-gradient(90deg, #00e0ff, #7f5cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 
-/* ITEMS DE CONTACTO */
-.contact-item{
-  margin-bottom:20px;
+/* 🔥 INFO CONTACTO */
+.contact-item span {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #7f8ea3;
 }
 
-.contact-item span{
-  font-size:12px;
-  letter-spacing:1px;
-  color:#6b8f86;
-}
-
-.contact-item p{
-  font-size:15px;
-  font-weight:500;
-  margin-top:4px;
-  color:#0f3f33;
+.contact-item p {
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 4px;
+  color: #ffffff;
 }
 
 
-/* GRID FORMULARIO */
+/* 🔥 FORM GRID */
 .contact-form-pro {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -118,7 +117,7 @@
 }
 
 
-/* TEXTAREA DERECHA */
+/* 🔥 TEXTAREA */
 .textarea-col {
   grid-row: span 2;
   min-height: 180px;
@@ -126,114 +125,94 @@
 }
 
 
-/* INPUTS */
+/* 🔥 INPUTS FUTURISTAS */
 .contact-form-pro input,
 .contact-form-pro textarea {
-
   border-radius: 12px;
   padding: 14px 16px;
 
-  border: 1px solid #d7e3de;
+  border: 1px solid rgba(255,255,255,0.08);
 
   font-size: 0.95rem;
 
-  background: #f2f7f5;
+  background: rgba(255,255,255,0.04);
+  color: white;
 
   transition: all 0.25s ease;
 }
 
 
-/* FOCUS INPUTS */
+/* 🔥 PLACEHOLDER */
+.contact-form-pro input::placeholder,
+.contact-form-pro textarea::placeholder {
+  color: #7f8ea3;
+}
+
+
+/* 🔥 FOCUS */
 .contact-form-pro input:focus,
 .contact-form-pro textarea:focus {
-
-  border-color: #2e7d63;
-
+  border-color: #00e0ff;
   outline: none;
 
-  box-shadow: 0 0 0 3px rgba(46,125,99,0.18);
-
-  background: white;
+  box-shadow: 0 0 0 2px rgba(0,224,255,0.2);
+  background: rgba(255,255,255,0.06);
 }
 
 
-/* BOTON WRAPPER */
+/* 🔥 LABELS */
+.contact-form-pro label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #7f8ea3;
+  margin-bottom: 5px;
+  display: block;
+}
+
+
+/* 🔥 BOTÓN */
 .contact-btn-wrap {
   grid-column: span 2;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
-
-/* BOTON */
 .btn-contact-pro {
-
-  background: linear-gradient(
-    135deg,
-    #2e7d63,
-    #0f3f33
-  );
-
+  background: linear-gradient(90deg, #00e0ff, #7f5cff);
   border: none;
 
   padding: 14px 34px;
 
-  border-radius: 14px;
+  border-radius: 50px;
 
-  font-weight: 600;
-
+  font-weight: 700;
   color: white;
 
-  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0,224,255,0.4);
+
+  transition: 0.3s ease;
 }
 
-
-/* HOVER BOTON */
 .btn-contact-pro:hover {
-
-  transform: translateY(-2px);
-
-  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-
-  background: linear-gradient(
-    135deg,
-    #359b79,
-    #124e3e
-  );
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 35px rgba(0,224,255,0.6);
 }
 
 
-/* LABELS */
-.contact-form-pro label{
-
-  font-size:12px;
-
-  letter-spacing:1px;
-
-  color:#4b6b61;
-
-  margin-bottom:5px;
-
-  display:block;
-}
-
-
-/* RESPONSIVE */
-@media (max-width: 992px){
-
-  .contact-grid{
-    grid-template-columns:1fr;
+/* 📱 RESPONSIVE */
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
   }
 
-  .contact-form-pro{
-    grid-template-columns:1fr;
+  .contact-form-pro {
+    grid-template-columns: 1fr;
   }
 
-  .textarea-col{
-    grid-row:auto;
+  .textarea-col {
+    grid-row: auto;
   }
 
-  .contact-btn-wrap{
-    grid-column:span 1;
+  .contact-btn-wrap {
+    grid-column: span 1;
   }
-
 }

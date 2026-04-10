@@ -1,79 +1,164 @@
-/* CONTENEDOR LOGO + TEXTO */
-.brand-wrapper{
+/* ============================= */
+/* NAVBAR APPLE STYLE */
+/* ============================= */
+
+.privara-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  height: 72px;
+  display: flex;
+  align-items: center;
+
+  background: rgba(10, 12, 20, 0.4);
+  backdrop-filter: blur(8px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+
+  transition: all 0.35s ease;
+}
+
+/* SCROLL */
+.privara-navbar.scrolled {
+  height: 58px;
+  background: rgba(10, 12, 20, 0.75);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+
+
+/* ============================= */
+/* CONTAINER */
+/* ============================= */
+
+.privara-navbar .container{
   display:flex;
   align-items:center;
 }
 
-/* LOGO MAS GRANDE */
+
+/* ============================= */
+/* LOGO */
+/* ============================= */
+
 .nav-logo {
-  height: 45px;
+  height: 38px;
+  transition: all 0.3s ease;
 }
 
-/* CONTENEDOR TEXTO */
-.brand-text-wrapper{
-  display:flex;
-  align-items:baseline;
-  gap:6px;
-}
-
-/* PRIVARA */
-.brand-main{
-  font-size:1.8rem;
-  font-weight:700;
-  color:#C6D6C8;
-  letter-spacing:1px;
-}
-
-/* CONSULTORES */
-.brand-sub{
-  font-size:1rem;
-  color:#9fb8a9;
-  font-weight:500;
-}/* NAVBAR */
-.privara-navbar {
-  background: linear-gradient(90deg, #0F2F24, #134436);
-  padding: 12px 0;
+.privara-navbar.scrolled .nav-logo {
+  height: 30px;
 }
 
 
+/* ============================= */
 /* TEXTO LOGO */
-.brand-text {
+/* ============================= */
+
+.brand-main {
   font-size: 1.5rem;
-  font-weight: 600;
-  color: #C6D6C8;
+  font-weight: 800;
+
+  background: linear-gradient(90deg,#ffffff,#bcd6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+.brand-sub {
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  margin-left: 4px;
+
+  background: linear-gradient(90deg,#00e0ff,#7f5cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.privara-navbar.scrolled .brand-main {
+  font-size: 1.2rem;
+}
+
+.privara-navbar.scrolled .brand-sub {
+  font-size: 0.75rem;
+}
+
+
+/* ============================= */
 /* LINKS */
+/* ============================= */
+
 .nav-link-custom {
-  color: #C6D6C8 !important;
+  position: relative;
+  color: #aab4c5 !important;
   font-weight: 500;
-  font-size: 0.95rem;
-  transition: 0.25s;
+  font-size: 0.9rem;
+  margin-left: 18px;
 }
 
 .nav-link-custom:hover {
   color: white !important;
 }
 
+.nav-link-custom::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+
+  background: linear-gradient(90deg,#00e0ff,#7f5cff);
+  transition: width 0.3s ease;
+}
+
+.nav-link-custom:hover::after {
+  width: 100%;
+}
+
+.nav-link-active {
+  color: white !important;
+}
+
+.nav-link-active::after {
+  width: 100%;
+}
+
+
+/* ============================= */
 /* BOTON CONTACTO */
-.btn-contacto {
-  border: 1px solid #C6D6C8;
-  background: transparent;
-  color: #C6D6C8;
-  padding: 6px 18px;
-  border-radius: 30px;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
+/* ============================= */
+
+.btn-contacto{
+  margin-left:20px;
+
+  background: linear-gradient(90deg,#00e0ff,#7f5cff);
+  border:none;
+
+  padding:7px 20px;
+  border-radius:50px;
+
+  font-size:0.85rem;
+  font-weight:600;
+
+  color:white;
+
+  box-shadow:0 0 12px rgba(0,224,255,0.4);
+
+  transition:all 0.3s ease;
 }
 
-.btn-contacto:hover {
-  background: #C6D6C8;
-  color: #0F2F24;
+.btn-contacto:hover{
+  transform:translateY(-2px) scale(1.05);
 }
 
-/* DISTRIBUCION */
-.nav-balanced {
-  display: flex;
-  align-items: center;
-  gap: 28px;
+
+/* ============================= */
+/* FIX BODY */
+/* ============================= */
+
+body{
+  padding-top:72px;
 }

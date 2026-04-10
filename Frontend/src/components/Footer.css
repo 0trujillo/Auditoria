@@ -1,162 +1,257 @@
-/* Fondo con gradiente sutil */
+/* ============================= */
+/* FOOTER WRAPPER */
+/* ============================= */
+
 .footer-privara {
-  background: linear-gradient(180deg, #0b1a15 0%, #08130f 100%);
-  color: #c6d6c8;
-  padding: 50px 0 20px;
-  font-size: 0.85rem;
+  position: relative;
+  background: #05070d;
+  color: #aab4c5;
+  padding: 70px 0 25px;
+  overflow: hidden;
 }
 
-/* CTA superior */
+/* fondo glow */
+
+.footer-privara::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 20% 20%, #0f2a44, transparent 70%);
+  opacity:0.7;
+  z-index:0;
+}
+
+/* contenido encima */
+
+.footer-inner{
+  position:relative;
+  z-index:2;
+}
+
+
+/* ============================= */
+/* CTA */
+/* ============================= */
+
 .footer-cta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 40px;
-  padding: 25px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:50px;
+  padding:30px;
+
+  border-radius:16px;
+
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(8px);
 }
 
-.footer-cta h4 {
-  color: #ffffff;
-  margin: 0;
-  font-size: 1.1rem;
+.footer-cta h4{
+  color:white;
+  margin:0;
+  font-size:1.2rem;
+  font-weight:700;
 }
 
-.footer-cta-btn {
-  background: #9be3c6;
-  color: #06241b;
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.3s;
+/* botón */
+
+.footer-cta-btn{
+  background:linear-gradient(90deg,#00e0ff,#7f5cff);
+  color:white;
+
+  padding:12px 22px;
+  border-radius:40px;
+
+  font-weight:600;
+  text-decoration:none;
+
+  box-shadow:0 0 20px rgba(0,224,255,0.35);
+
+  transition:0.3s;
 }
 
-.footer-cta-btn:hover {
-  background: #7fd8b6;
+.footer-cta-btn:hover{
+  transform:translateY(-2px) scale(1.03);
 }
 
-/* Grid estilo moderno */
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-  gap: 30px;
+
+/* ============================= */
+/* GRID */
+/* ============================= */
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr 1fr;
+  gap:35px;
 }
 
-/* Columnas */
-.footer-col {
-  min-width: 150px;
+
+/* ============================= */
+/* COLUMNAS */
+/* ============================= */
+
+.footer-col{
+  min-width:150px;
 }
 
-/* Marca más grande */
-.footer-col.brand {
-  max-width: 300px;
+.footer-col.brand{
+  max-width:320px;
 }
 
-/* Logo */
-.footer-logo {
-  color: #ffffff;
-  font-weight: 700;
-  margin-bottom: 12px;
+
+/* ============================= */
+/* LOGO */
+/* ============================= */
+
+.footer-logo{
+  font-size:1.3rem;
+  font-weight:800;
+  margin-bottom:14px;
+
+  background:linear-gradient(90deg,#ffffff,#bcd6ff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-.logo-thin {
-  font-weight: 300;
-  margin-left: 4px;
+.logo-thin{
+  font-weight:500;
+  margin-left:5px;
+
+  background:linear-gradient(90deg,#00e0ff,#7f5cff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-/* Texto */
-.footer-about {
-  font-size: 0.8rem;
-  line-height: 1.5;
-  opacity: 0.85;
+
+/* ============================= */
+/* TEXTO */
+/* ============================= */
+
+.footer-about{
+  font-size:0.9rem;
+  line-height:1.6;
+  opacity:0.85;
 }
 
-/* Títulos */
-.footer-heading {
-  color: #ffffff;
-  font-size: 0.7rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+
+/* ============================= */
+/* TITULOS */
+/* ============================= */
+
+.footer-heading{
+  color:white;
+  font-size:0.75rem;
+  font-weight:700;
+
+  margin-bottom:14px;
+
+  text-transform:uppercase;
+  letter-spacing:1px;
 }
 
-/* Listas */
-.footer-col ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+
+/* ============================= */
+/* LISTAS */
+/* ============================= */
+
+.footer-col ul{
+  list-style:none;
+  padding:0;
+  margin:0;
 }
 
-.footer-col li {
-  margin-bottom: 6px;
+.footer-col li{
+  margin-bottom:8px;
 }
 
-/* Links */
-.footer-col a {
-  color: #c6d6c8;
-  text-decoration: none;
-  opacity: 0.8;
-  transition: 0.25s;
+
+/* ============================= */
+/* LINKS */
+/* ============================= */
+
+.footer-col a{
+  color:#aab4c5;
+  text-decoration:none;
+  transition:0.25s;
 }
 
-.footer-col a:hover {
-  color: #ffffff;
-  opacity: 1;
+.footer-col a:hover{
+  color:white;
 }
 
-/* Contacto */
-.footer-contact li {
-  opacity: 0.9;
+
+/* ============================= */
+/* CONTACTO */
+/* ============================= */
+
+.footer-contact li{
+  opacity:0.9;
 }
 
-/* Divider */
-.footer-divider {
-  margin: 30px 0 15px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+/* ============================= */
+/* DIVIDER */
+/* ============================= */
+
+.footer-divider{
+  margin:35px 0 18px;
+  border-top:1px solid rgba(255,255,255,0.08);
 }
 
-/* Bottom */
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.7rem;
-  opacity: 0.6;
-  flex-wrap: wrap;
+
+/* ============================= */
+/* BOTTOM */
+/* ============================= */
+
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  font-size:0.75rem;
+  opacity:0.6;
+
+  flex-wrap:wrap;
 }
 
-.footer-legal {
-  display: flex;
-  gap: 10px;
-  align-items: center;
+.footer-legal{
+  display:flex;
+  gap:12px;
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media(max-width:992px){
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+    gap:30px;
   }
 
-  .footer-cta {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
+  .footer-cta{
+    flex-direction:column;
+    gap:18px;
+    text-align:center;
   }
+
 }
 
-@media (max-width: 576px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
+@media(max-width:576px){
+
+  .footer-grid{
+    grid-template-columns:1fr;
   }
 
-  .footer-bottom {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
+  .footer-bottom{
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
   }
+
 }

@@ -7,38 +7,41 @@ export default function Home() {
 
   return (
     <div className="home-wrapper">
-      {/* Sección Hero Principal */}
       <section className="hero-privara">
-        {/* Capas decorativas de fondo similares a la imagen 5 */}
-        <div className="hero-gradient-overlay" />
-        <div className="hero-lines" />
+
+        <div className="hero-bg" />
+        <div className="hero-overlay" />
 
         <Container className="hero-content">
-          <div className="text-center">
-            {/* Tag superior discreto */}
-            <span className="hero-tag">Privara Consultores</span>
+          <div className="hero-inner text-center">
 
-            {/* Título con gradiente de luz */}
+            {/* LOGO FUTURISTA */}
+            <div className="hero-logo">
+              <span className="logo-privara">Privara</span>
+              <span className="logo-consultores">Consultores</span>
+            </div>
+
+            {/* TITULO */}
             <h1 className="hero-title-main">
-              Gobernanza y cumplimiento <br />
-              <span className="highlight-text">en entornos digitales</span>
+              Protege el futuro <br />
+              de tu <span className="highlight-text">empresa</span>
             </h1>
 
-            {/* Párrafo descriptivo con ancho controlado */}
-            <p className="hero-description mx-auto">
-              Asesoramos a organizaciones en la gestión de riesgos legales y tecnológicos, 
-              mediante el diseño e implementación de estructuras de cumplimiento adaptadas 
-              a la normativa chilena y al uso de tecnologías como inteligencia artificial.
+            {/* DESCRIPCIÓN */}
+            <p className="hero-description">
+              Cumplimiento normativo, inteligencia artificial y gestión de riesgos
+              en un solo ecosistema. Adaptamos tu empresa a la nueva era digital.
             </p>
 
-            {/* Botones estilo LegalDatos */}
-            <div className="hero-action-group mt-4">
+            {/* BOTONES */}
+            <div className="hero-action-group">
               <Button
                 className="btn-privara-primary"
                 onClick={() => navigate("/contacto")}
               >
-                Solicitar Consultoría
+                Solicitar Consultor
               </Button>
+
               <Button
                 className="btn-privara-outline"
                 onClick={() => navigate("/servicios")}
@@ -46,13 +49,9 @@ export default function Home() {
                 Ver servicios
               </Button>
             </div>
+
           </div>
         </Container>
-      </section>
-
-      {/* Sección de imagen (si deseas mantener el banner de equipo) */}
-      <section className="hero-team-banner">
-        <img src="/team.png" alt="Equipo Privara" className="img-fluid" />
       </section>
     </div>
   );

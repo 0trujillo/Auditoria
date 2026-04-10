@@ -1,73 +1,55 @@
-# React + TypeScript + Vite
+🛡️ Privara Consultores - Plataforma Corporativa
+Sistema web desarrollado con React y Bootstrap para la firma consultora especializada en gobernanza digital, cumplimiento legal y protección de datos en el contexto chileno.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📋 Resumen del Proyecto
+Privara es una plataforma diseñada para proyectar una imagen profesional y técnica, enfocada en la gestión de riesgos legales y tecnológicos. El diseño utiliza una paleta de colores Deep Forest Green (#0F2F24) y Mint Mist (#C6D6C8) para transmitir seriedad y modernidad.
 
-Currently, two official plugins are available:
+Tecnologías Principales
+Frontend: React.js.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Estilos: React-Bootstrap & CSS3 personalizado (con uso intensivo de CSS Grid y Flexbox).
 
-## React Compiler
+Enrutamiento: React Router DOM.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Integraciones: EmailJS para la gestión del formulario de contacto.
 
-## Expanding the ESLint configuration
+🚀 Progreso de Desarrollo (Log)
+Home & Hero: Implementación del banner principal con el mensaje central de gobernanza y cumplimiento en entornos digitales.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Navbar: Navegación responsiva con un botón de hamburguesa personalizado y efecto de línea activa en los enlaces.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Footer: Diseño de pie de página modular con secciones para servicios, contacto, redes y aviso legal.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Fase 2: Servicios y Contenidos (Completado)
+Catálogo de Servicios: Sistema de tarjetas interactivas que consumen datos estructurados desde serviciosData.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Detalle de Servicio: Ruta dinámica (/servicios/:id) para mostrar la descripción profunda y los entregables de cada consultoría.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Metodología: Sección que desglosa el proceso de trabajo (Diagnóstico, Diseño, Implementación, Seguimiento).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Nosotros: Página de visión institucional sobre derecho digital y ciberseguridad.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Fase 3: Funcionalidad de Contacto (Completado)
+Formulario Pro: Integración con EmailJS para envío directo de correos desde el cliente.
+
+Validaciones: Campos obligatorios y manejo de estados (éxito/error) mediante alertas.
+src/
+├── components/
+│   ├── NavbarComponent.jsx  # Navegación con sticky-top
+│   ├── Footer.jsx           # Pie de página institucional
+│   ├── Hero.jsx             # Sección de impacto principal
+│   └── InfoSection.jsx      # Tabla de infracciones UTM
+├── pages/
+│   ├── Home.jsx             # Landing page
+│   ├── Servicios.jsx        # Catálogo de consultorías
+│   ├── ServicioDetalle.jsx  # Vista detallada dinámica
+│   ├── Metodologia.jsx      # Flujo de trabajo
+│   ├── Nosotros.jsx         # Historia y enfoque
+│   └── Contacto.jsx         # Formulario con EmailJS
+└── styles/
+    └── [Cada componente tiene su propio .css para modularidad]
+
+Parámetro,Valor Actual
+Service ID,service_s0jb918
+Template ID,template_1xgn5yn
+Public Key,ly9TTYPvA92zkDVKu

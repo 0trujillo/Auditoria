@@ -1,91 +1,220 @@
-/* 🔥 Banner superior */
-.detalle-banner {
-  background: linear-gradient(135deg, #1a3a3a 0%, #0b2a21 100%);
-  padding: 80px 0;
-  color: white;
+/* ============================= */
+/* WRAPPER */
+/* ============================= */
+
+.servicio-wrapper{
+  background:#05070d;
+  min-height:100vh;
+  overflow-x:hidden;
 }
 
-.btn-volver {
-  border-radius: 20px;
-  font-size: 0.9rem;
-  padding: 6px 20px;
+
+/* ============================= */
+/* HERO DETALLE */
+/* ============================= */
+
+.detalle-banner{
+  position:relative;
+  padding:140px 20px 120px;
+  text-align:center;
+  color:white;
 }
 
-/* 🔥 Títulos del banner */
-.detalle-title {
-  font-weight: 800;
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+/* fondo igual al home */
+
+.detalle-bg{
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 30% 20%, #0f2a44, #05070d 70%);
+  z-index:0;
 }
 
-.detalle-sub {
-  font-size: 1.2rem;
-  color: #c6d6c8;
+.detalle-overlay{
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 70% 30%, rgba(0,255,255,0.08), transparent);
+  z-index:1;
 }
 
-/* 🔥 Card principal */
-.detalle-content-card {
-  background: #ffffff;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-  margin-top: -60px;
-  position: relative;
-  z-index: 2;
+.detalle-inner{
+  position:relative;
+  z-index:2;
+  max-width:900px;
+  margin:auto;
 }
 
-/* 🔥 TEXTOS (FIX IMPORTANTE) */
+
+/* ============================= */
+/* TITULOS */
+/* ============================= */
+
+.detalle-title{
+  font-size:3rem;
+  font-weight:800;
+  color:white;
+  margin-bottom:15px;
+}
+
+.detalle-sub{
+  font-size:1.2rem;
+  color:#aab4c5;
+}
+
+.highlight-text{
+  background:linear-gradient(90deg,#00e0ff,#7f5cff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+
+/* ============================= */
+/* BOTON VOLVER */
+/* ============================= */
+
+.btn-volver{
+  margin-bottom:25px;
+
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.2);
+  color:white;
+
+  padding:8px 20px;
+  border-radius:40px;
+
+  transition:.3s;
+}
+
+.btn-volver:hover{
+  background:rgba(255,255,255,0.05);
+}
+
+
+/* ============================= */
+/* CARD CONTENIDO */
+/* ============================= */
+
+.detalle-content-card{
+  background:rgba(20,25,40,0.7);
+  backdrop-filter:blur(10px);
+
+  padding:50px;
+  border-radius:20px;
+
+  margin-top:-80px;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+
+
+/* ============================= */
+/* TEXTOS */
+/* ============================= */
+
 .detalle-content-card h3,
-.detalle-content-card h4 {
-  color: #1a2a3a;
-  font-weight: 700;
+.detalle-content-card h4{
+  color:white;
+  font-weight:700;
 }
 
-.descripcion-text {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #444;
+.descripcion-text{
+  font-size:1.1rem;
+  line-height:1.7;
+  color:#aab4c5;
 }
 
-/* 🔥 LISTA */
-.detalle-list {
-  list-style: none;
-  padding-left: 0;
-  margin-top: 20px;
+
+/* ============================= */
+/* LISTA */
+/* ============================= */
+
+.detalle-list{
+  list-style:none;
+  padding:0;
+  margin-top:20px;
 }
 
-.detalle-list li {
-  padding: 12px 0;
-  border-bottom: 1px solid #eee;
-  padding-left: 30px;
-  position: relative;
-  color: #333; /* 🔥 CLAVE: antes estaba muy claro */
+.detalle-list li{
+  padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  padding-left:30px;
+  position:relative;
+  color:#d0d6e0;
 }
 
-/* ✔ Check bonito */
-.detalle-list li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: #00b894;
-  font-weight: bold;
+.detalle-list li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  color:#00e0ff;
+  font-weight:bold;
 }
 
-/* 🔥 CTA */
-.detalle-cta {
-  background: #f8f9fa;
-  border-radius: 12px;
+
+/* ============================= */
+/* CTA */
+/* ============================= */
+
+.detalle-cta{
+  margin-top:40px;
+  padding:30px;
+
+  background:rgba(255,255,255,0.03);
+  border-radius:14px;
+
+  text-align:center;
 }
 
-/* Botón */
-.btn-privara-primary {
-  background: #1a3a3a;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 25px;
-  transition: 0.3s;
+
+/* ============================= */
+/* BOTON PRIVARA */
+/* ============================= */
+
+.btn-privara-primary{
+  background:linear-gradient(90deg,#00e0ff,#7f5cff) !important;
+  border:none !important;
+  color:white !important;
+
+  padding:14px 30px !important;
+  border-radius:50px !important;
+
+  font-weight:700;
+
+  box-shadow:0 0 20px rgba(0,224,255,0.4);
+
+  transition:.3s;
 }
 
-.btn-privara-primary:hover {
-  background: #145c50;
+.btn-privara-primary:hover{
+  transform:translateY(-3px) scale(1.03);
+}
+
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media(max-width:768px){
+
+  .detalle-title{
+    font-size:2.2rem;
+  }
+
+  .detalle-content-card{
+    padding:35px;
+  }
+
+}
+
+@media(max-width:480px){
+
+  .detalle-title{
+    font-size:1.8rem;
+  }
+
+  .descripcion-text{
+    font-size:1rem;
+  }
+
 }

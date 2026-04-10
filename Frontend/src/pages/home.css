@@ -1,106 +1,141 @@
-/* Contenedor Principal con el verde oscuro de base */
 .home-wrapper {
-  background-color: #0b2a21; 
+  background: #05070d;
   overflow-x: hidden;
 }
 
+/* HERO */
 .hero-privara {
   position: relative;
-  padding: 140px 0 160px;
-  min-height: 80vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  background: radial-gradient(circle at 50% 30%, #154234 0%, #0b2a21 70%);
+  justify-content: center;
+  padding: 120px 20px;
 }
 
-/* Efecto de líneas/red de fondo (como se ve en la imagen 5) */
-.hero-lines {
+/* FONDO FUTURISTA */
+.hero-bg {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("https://www.transparenttextures.com/patterns/carbon-fibre.png"); /* Opcional: textura sutil */
-  opacity: 0.1;
-  pointer-events: none;
+  inset: 0;
+  background: radial-gradient(circle at 30% 20%, #0f2a44, #05070d 70%);
+  z-index: 0;
 }
 
-.hero-tag {
-  display: inline-block;
-  color: #C6D6C8;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 20px;
+/* OVERLAY CON LUZ */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(0, 255, 255, 0.08), transparent);
+  z-index: 1;
 }
 
-/* Título estilo LegalDatos: Grande y con ligero gradiente blanco/gris */
+/* CONTENIDO */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* LOGO TIPO LEGALDATOS */
+.hero-logo {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.logo-privara {
+  background: linear-gradient(90deg, #ffffff, #bcd6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo-consultores {
+  background: linear-gradient(90deg, #4fd1ff, #9f7aea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: 5px;
+}
+
+/* TITULO */
 .hero-title-main {
   font-size: 3.8rem;
   font-weight: 800;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 1.1;
-  max-width: 950px;
-  margin: 0 auto 30px;
-  letter-spacing: -1px;
+  margin-bottom: 25px;
 }
 
 .highlight-text {
-  color: #C6D6C8; /* El verde menta para resaltar */
+  background: linear-gradient(90deg, #00e0ff, #7f5cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+/* DESCRIPCIÓN */
 .hero-description {
   font-size: 1.15rem;
-  color: #D2DFD5;
-  line-height: 1.8;
-  max-width: 750px;
-  opacity: 0.9;
+  color: #aab4c5;
+  margin-bottom: 35px;
 }
 
-/* --- BOTONES --- */
+/* BOTONES */
 .hero-action-group {
   display: flex;
   gap: 15px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-/* Botón Sólido (Llamada a la acción principal) */
+/* BOTÓN PRINCIPAL FUTURISTA */
 .btn-privara-primary {
-  background-color: #E4E9E3 !important;
-  color: #0b2a21 !important;
+  background: linear-gradient(90deg, #00e0ff, #7f5cff) !important;
   border: none !important;
-  padding: 12px 30px !important;
+  color: white !important;
+  padding: 14px 32px !important;
   font-weight: 700 !important;
-  border-radius: 8px !important;
-  transition: 0.3s ease;
+  border-radius: 50px !important;
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.4);
+  transition: 0.3s;
 }
 
 .btn-privara-primary:hover {
-  background-color: #ffffff !important;
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.03);
 }
 
-/* Botón Outline */
+/* BOTÓN SECUNDARIO */
 .btn-privara-outline {
   background: transparent !important;
-  color: #E4E9E3 !important;
-  border: 1px solid rgba(228, 233, 227, 0.3) !important;
-  padding: 12px 30px !important;
-  font-weight: 600 !important;
-  border-radius: 8px !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  color: #ffffff !important;
+  padding: 14px 30px !important;
+  border-radius: 50px !important;
 }
 
 .btn-privara-outline:hover {
-  background: rgba(228, 233, 227, 0.1) !important;
-  border-color: #E4E9E3 !important;
+  background: rgba(255,255,255,0.05) !important;
 }
 
-/* Banner de imagen inferior */
-.hero-team-banner img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  filter: brightness(0.7);
-  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-title-main {
+    font-size: 2.5rem;
+  }
+
+  .hero-logo {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title-main {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
 }

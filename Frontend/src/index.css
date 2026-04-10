@@ -1,19 +1,123 @@
+/* ============================= */
+/* VARIABLES GLOBALES */
+/* ============================= */
+
 :root {
-  --primary-green: #0F2F24; /* Tu color actual */
-  --secondary-green: #0b2a21; /* Tu color actual */
-  --accent-mint: #C6D6C8; /* Tu color de acento */
+  --primary-green: #0F2F24;
+  --secondary-green: #0b2a21;
+  --accent-mint: #C6D6C8;
+
+  /* NUEVO ESTILO FUTURISTA */
+  --bg-dark: #05070d;
+  --bg-gradient: radial-gradient(circle at 20% 10%, #0f2a44, #05070d 70%);
+
+  --neon-cyan: #00e0ff;
+  --neon-purple: #7f5cff;
+
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
+
+  --text-primary: #ffffff;
+  --text-secondary: #aab4c5;
 }
+
+
+/* ============================= */
+/* RESET BASE */
+/* ============================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ============================= */
+/* BODY */
+/* ============================= */
 
 body {
-  font-family: 'Inter', sans-serif; /* Tipografía más moderna */
-  background-color: var(--secondary-green);
-  color: #E7EDE8;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+
+  padding-top: 85px; /* 👈 FIX NAVBAR */
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Efecto de fondo degradado como la imagen 5 */
+
+/* ============================= */
+/* FONDO GLOBAL OPCIONAL */
+/* ============================= */
+
 .main-bg-gradient {
-  background: radial-gradient(circle at top right, #1a4a3a, #0b2a21 50%);
+  background: var(--bg-gradient);
   min-height: 100vh;
+}
+
+
+/* ============================= */
+/* TIPOGRAFÍA */
+/* ============================= */
+
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+
+/* ============================= */
+/* LINKS */
+/* ============================= */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* ============================= */
+/* SCROLLBAR (OPCIONAL PRO) */
+/* ============================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #05070d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--neon-cyan), var(--neon-purple));
+  border-radius: 10px;
+}
+
+
+/* ============================= */
+/* SELECCIÓN TEXTO */
+/* ============================= */
+
+::selection {
+  background: rgba(0, 224, 255, 0.3);
+  color: #fff;
+}
+
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px; /* 👈 navbar más pequeño */
+  }
 }
