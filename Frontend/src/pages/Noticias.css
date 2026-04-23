@@ -1,0 +1,209 @@
+/* ============================= */
+/* WRAPPER */
+/* ============================= */
+
+.not-wrapper {
+  padding: 140px 20px 80px;
+  background: #05070d;
+  min-height: 100vh;
+}
+
+/* ============================= */
+/* CONTAINER */
+/* ============================= */
+
+.not-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ============================= */
+/* TITULO */
+/* ============================= */
+
+.not-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: white;
+}
+
+/* ============================= */
+/* GRID */
+/* ============================= */
+
+.not-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+/* ============================= */
+/* CARD BASE */
+/* ============================= */
+
+.not-card-apple {
+  padding: 18px;
+  border-radius: 18px;
+  cursor: pointer;
+
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.05);
+
+  transition: all 0.25s ease;
+}
+
+/* HOVER SUTIL */
+.not-card-apple:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.03);
+  border-color: rgba(255,255,255,0.15);
+}
+
+/* ============================= */
+/* FEATURED (HERO) */
+/* ============================= */
+
+.featured {
+  position: relative;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+  background: none;
+}
+
+/* ============================= */
+/* IMAGEN FEATURED */
+/* ============================= */
+
+.not-img-apple {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.not-img-apple img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+/* OVERLAY PRO */
+.not-img-apple::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.2),
+    rgba(5,7,13,0.95)
+  );
+}
+
+/* ============================= */
+/* CONTENIDO */
+/* ============================= */
+
+.not-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* FEATURED TEXTO SOBRE IMAGEN */
+.featured .not-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 40px 30px;
+
+  background: linear-gradient(
+    to top,
+    rgba(5,7,13,0.95),
+    rgba(5,7,13,0.4),
+    transparent
+  );
+}
+
+/* ============================= */
+/* FUENTE */
+/* ============================= */
+
+.not-source {
+  font-size: 0.7rem;
+  color: #8b949e;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ============================= */
+/* TITULO */
+/* ============================= */
+
+.not-content h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+/* FEATURED TITULO */
+.featured h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* ============================= */
+/* TEXTO */
+/* ============================= */
+
+.not-content p {
+  font-size: 0.95rem;
+  color: #b6c2d1;
+  margin-bottom: 12px;
+  max-width: 600px;
+}
+
+/* ============================= */
+/* LINK */
+/* ============================= */
+
+.not-read {
+  font-size: 0.85rem;
+  color: #00c2ff;
+  font-weight: 500;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (min-width: 768px) {
+  .not-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .featured {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .not-wrapper {
+    padding-top: 100px;
+  }
+
+  .not-img-apple {
+    height: 220px;
+  }
+
+  .featured h2 {
+    font-size: 1.6rem;
+  }
+}

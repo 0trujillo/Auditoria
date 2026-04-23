@@ -9,17 +9,12 @@ export default function Home() {
     <div className="home-wrapper">
       <section className="hero-privara">
 
+        {/* BACKGROUND */}
         <div className="hero-bg" />
         <div className="hero-overlay" />
 
         <Container className="hero-content">
           <div className="hero-inner text-center">
-
-            {/* LOGO FUTURISTA */}
-            <div className="hero-logo">
-              <span className="logo-privara">Privara</span>
-              <span className="logo-consultores">Consultores</span>
-            </div>
 
             {/* TITULO */}
             <h1 className="hero-title-main">

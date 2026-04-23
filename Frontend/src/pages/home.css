@@ -1,88 +1,124 @@
+/* ============================= */
+/* WRAPPER */
+/* ============================= */
+
 .home-wrapper {
-  background: #05070d;
+  background: #1a0b3a;
   overflow-x: hidden;
 }
 
+/* ============================= */
 /* HERO */
+/* ============================= */
+
 .hero-privara {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 120px 20px;
+  justify-content: center; /* 🔥 centrado real */
+  padding: 0 20px;
+  text-align: center;
 }
 
-/* FONDO FUTURISTA */
+/* ============================= */
+/* BACKGROUND */
+/* ============================= */
+
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 30% 20%, #0f2a44, #05070d 70%);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(127,92,255,0.25), transparent 50%),
+    radial-gradient(circle at 70% 20%, rgba(0,224,255,0.15), transparent 50%),
+    linear-gradient(180deg, #2a0f5c 0%, #120526 60%, #05070d 100%);
   z-index: 0;
 }
 
-/* OVERLAY CON LUZ */
+/* ============================= */
+/* DETALLES FUTURISTAS */
+/* ============================= */
+
+.hero-bg::before,
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #7f5cff, transparent);
+  opacity: 0.35;
+}
+
+.hero-bg::before {
+  top: 42%;
+  left: 0;
+}
+
+.hero-bg::after {
+  top: 58%;
+  right: 0;
+}
+
+/* ============================= */
+/* OVERLAY */
+/* ============================= */
+
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 70% 30%, rgba(0, 255, 255, 0.08), transparent);
+  background: rgba(0,0,0,0.3);
   z-index: 1;
 }
 
-/* CONTENIDO */
+/* ============================= */
+/* CONTENT */
+/* ============================= */
+
 .hero-content {
   position: relative;
   z-index: 2;
+  width: 100%;
+  max-width: 900px; /* 🔥 clave para centrado elegante */
 }
 
 .hero-inner {
-  max-width: 900px;
   margin: 0 auto;
 }
 
-/* LOGO TIPO LEGALDATOS */
-.hero-logo {
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 30px;
-}
-
-.logo-privara {
-  background: linear-gradient(90deg, #ffffff, #bcd6ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.logo-consultores {
-  background: linear-gradient(90deg, #4fd1ff, #9f7aea);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-left: 5px;
-}
-
+/* ============================= */
 /* TITULO */
+/* ============================= */
+
 .hero-title-main {
-  font-size: 3.8rem;
+  font-size: 3.4rem;
   font-weight: 800;
   color: #ffffff;
-  line-height: 1.1;
-  margin-bottom: 25px;
+  line-height: 1.15;
+  margin-bottom: 20px;
 }
 
+/* GRADIENTE TEXTO */
 .highlight-text {
-  background: linear-gradient(90deg, #00e0ff, #7f5cff);
+  background: linear-gradient(90deg, #00e0ff, #a855f7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+/* ============================= */
 /* DESCRIPCIÓN */
+/* ============================= */
+
 .hero-description {
   font-size: 1.15rem;
-  color: #aab4c5;
-  margin-bottom: 35px;
+  color: #c4c9d4;
+  margin: 0 auto 35px;
+  max-width: 600px; /* 🔥 lectura perfecta */
 }
 
+/* ============================= */
 /* BOTONES */
+/* ============================= */
+
 .hero-action-group {
   display: flex;
   gap: 15px;
@@ -90,43 +126,59 @@
   flex-wrap: wrap;
 }
 
-/* BOTÓN PRINCIPAL FUTURISTA */
 .btn-privara-primary {
   background: linear-gradient(90deg, #00e0ff, #7f5cff) !important;
   border: none !important;
   color: white !important;
+
   padding: 14px 32px !important;
   font-weight: 700 !important;
   border-radius: 50px !important;
-  box-shadow: 0 0 20px rgba(0, 224, 255, 0.4);
-  transition: 0.3s;
+
+  box-shadow: 0 0 25px rgba(127,92,255,0.5);
+
+  transition: all 0.3s ease;
 }
 
 .btn-privara-primary:hover {
-  transform: translateY(-3px) scale(1.03);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 40px rgba(127,92,255,0.8);
 }
 
-/* BOTÓN SECUNDARIO */
 .btn-privara-outline {
   background: transparent !important;
-  border: 1px solid rgba(255,255,255,0.2) !important;
+  border: 1px solid rgba(255,255,255,0.25) !important;
   color: #ffffff !important;
+
   padding: 14px 30px !important;
   border-radius: 50px !important;
+
+  transition: all 0.3s ease;
 }
 
 .btn-privara-outline:hover {
-  background: rgba(255,255,255,0.05) !important;
+  background: rgba(255,255,255,0.08) !important;
 }
 
+/* ============================= */
+/* MICRO DETALLE PRO */
+/* ============================= */
+
+.hero-title-main span {
+  display: inline-block;
+}
+
+/* ============================= */
 /* RESPONSIVE */
+/* ============================= */
+
 @media (max-width: 768px) {
   .hero-title-main {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
 
-  .hero-logo {
-    font-size: 1.6rem;
+  .hero-logo-img {
+    width: 300px;
   }
 }
 
@@ -137,5 +189,9 @@
 
   .hero-description {
     font-size: 1rem;
+  }
+
+  .hero-logo-img {
+    width: 240px;
   }
 }
